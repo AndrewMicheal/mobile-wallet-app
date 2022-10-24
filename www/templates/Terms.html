@@ -1,0 +1,35 @@
+<ion-content>
+  <header class="cib-header">
+    <div class="cib-header-content daily">
+      <div ng-style="curlang === 'ar' && {'margin-right':'15px'} || curlang === 'en' && {'margin-left':'15px'} || lang === 'ar' && {'margin-right':'15px'} || lang === 'en' && {'margin-left':'15px'}">
+        <div class="left-side-content" >
+          <div>
+            <span class="ion-android-close"></span>
+          </div>
+          <span ng-style="curlang === 'ar' && {'margin-right':'5px'} || curlang === 'en' && {'margin-left':'5px'} || lang === 'ar' && {'margin-right':'5px'} || lang === 'en' && {'margin-left':'5px'}" >{{"TermsAndConditions" | translate}}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="mt-2">
+    <div class="terms-container">
+      <span class="terms-title">{{"TermsAndConditions" | translate}}</span>
+      <div class="mt-2">
+        <p class="terms-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta mollitia culpa magni esse pariatur. Saepe id nihil corporis alias obcaecati libero asperiores, exercitationem illo, repellat deserunt blanditiis enim iusto in!</p>
+        <p class="terms-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta mollitia culpa magni esse pariatur. Saepe id nihil corporis alias obcaecati libero asperiores, exercitationem illo, repellat deserunt blanditiis enim iusto in!</p>
+        <p class="terms-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="mt-2 terms-accept">
+        <input ng-style="curlang === 'ar' && {'margin-left':'8px'}  || curlang === 'en' && {'margin-right':'8px'} || curlanguage === 'ar' && {'margin-left':'8px'}  || curlanguage === 'en' && {'margin-right':'8px'}" type="checkbox" ng-model = "agree" ng-change = "accept(agree)" class="checkbox"/>
+        <span class="accept-title" >{{"AcceptTerms" | translate}}</span>
+      </div>
+      <div class="buttons btn-term">
+        <button ng-style="curlang === 'ar' && {'margin-left':'15px'} || curlang === 'en' && {'margin-right':'5px'} || lang === 'ar' && {'margin-left':'15px'} || lang === 'en' && {'margin-right':'5px'}" id="backBtn" class="back-btn" ng-click = "back()">{{"back" | translate}}</button>
+        <button ng-style="dsblBtn == true && {'background-color':'#f6f6f6',color : '#000'}  || dsblBtn == false && {'background-color':'#0026D9'}" class="next-btn ml-btn" ng-click = "agreeConditions()" ng-disabled = dsblBtn>{{"agree" | translate}} </button>
+      </div>
+    </div>
+  </section>
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,134 @@
+<ion-content>
+  <header class="cib-header">
+    <div class="cib-header-content daily">
+      <div id="leftSide">
+        <div class="left-side-content" ng-style="curlanguage === 'ar' && {'margin-right':'10px'} || curlanguage === 'en' && {'margin-left':'10px'} || curlang === 'ar' && {'margin-right':'10px'} || curlang === 'en' && {'margin-left':'10px'} ">
+          <div ng-style="curlang === 'ar' && {'padding-left':'5px'}  || curlang === 'en' && {'padding-right':'10px'} || createLang === 'en' && {'padding-right':'10px'} || createLang === 'ar' && {'padding-left':'10px'}  ">
+            <span  class="ion-android-close" id="closeIcon"></span>
+          </div>
+          <span >{{"CreateDailySavings" | translate}}</span>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="right-side-content daily-right" ng-style="curlang === 'ar' && {'padding-left':'20px'} || createLang === 'ar' && {'padding-left':'20px'}">
+          <div class="right-side-image-one">
+            <img src="img/2.JPG" alt="" srcset="">
+          </div>
+          <div ng-click="openPopover($event)" class="right-side-image-two">
+            <img  src="img/3.JPG" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="wallet-balance">
+    <div class="wallet-balance-content">
+      <p class="wallet-balance-content-desc">{{"walletBalance" | translate}} <span>EGP 6,918.00</span> : {{langDaily}}</p>
+    </div>
+  </section>
+  <section class="mt-1">
+    <div class="create-container">
+        <div class="name-account">
+          <span class="create-title">{{"NameOfAccount" | translate}}</span>
+          <div class="mt-1">
+            <input id="createName" ng-change = "getData(wallet)" ng-model = "wallet.name" type="text" class="create-input" name="" id="">
+            <div class="account-name">
+              <span>{{newWalletNameLength}}/50</span>
+            </div>
+            <p ng-show = "errorMsg" class="error-desc">{{"TheValueIsTooLong" | translate}}</p>
+          </div>
+        </div>
+        <div class="deposit-account mt-2">
+          <span class="create-title">{{"DepositAccount" | translate}} </span>
+          <div class="mt-1">
+            <input id = "deposit" ng-change = "getData(wallet)" ng-model = "wallet.deposit" type="number" class="create-input" name="" id="">
+            <p class="create-form-desc">{{"MinimumAmount" | translate}}</p>
+          </div>
+        </div>
+
+      <div class="source mt-2">
+        <span class="source-title padding-left">{{"Source" | translate}}</span>
+        <div class="wallet">
+          <div class="wallet-content-image">
+            <img src="img/5.JPG" alt="" srcset="">
+          </div>
+          <span class="pl wallet-account">{{"WalletAccount" | translate}}</span>
+        </div>
+      </div>
+      <div class="conditions mt-2">
+        <span class="condition-title padding-left">{{"Conditions" | translate}}</span>
+        <div class="items">
+          <div class="conditon-item-content-1">
+            <div class="left">
+              <span>{{"MandatoryInitalDeposit" | translate}}</span>
+            </div>
+            <div class="right">
+              <span>EGP 100</span>
+            </div>
+          </div>
+          <div class="conditon-item-content-2">
+            <div class="left">
+              <span>{{"MaximumAccount" | translate}} </span>
+            </div>
+            <div class="right">
+              <span>EGP 100,000</span>
+            </div>
+          </div>
+          <div class="conditon-item-content-1">
+            <div class="left">
+              <span>{{"IntersetRate" | translate}}</span>
+            </div>
+            <div class="right">
+              <span>4 %</span>
+            </div>
+          </div>
+          <div class="conditon-item-content-2">
+            <div class="left">
+              <span>{{"OpeningFee" | translate}}</span>
+            </div>
+            <div class="right">
+              <span>EGP 100</span>
+            </div>
+          </div>
+          <div class="conditon-item-content-1">
+            <div class="left">
+              <span>{{"MaintenanceFee" | translate}}</span>
+            </div>
+            <div class="right">
+              <span>EGP 50</span>
+            </div>
+          </div>
+          <div class="conditon-item-content-2">
+            <div class="left">
+              <span>{{"Stampduty" | translate}}</span>
+            </div>
+            <div class="right">
+              <span>EGP 200</span>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="backBtn" ng-style="curlang === 'ar' && {'margin-left':'10px'}" class="back-btn" ng-click = "goBackItem()">{{"back" | translate}}</button>
+            <button ng-click = "next()" ng-style="dsblBtn == true && {'background-color':'#f6f6f6',color : '#000'}  || dsblBtn == false && {'background-color':'#0026D9'}" class="next-btn ml-btn"  ng-disabled = dsblBtn>{{"next" | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class = "popoverLang">
+
+        <span ng-style="curlang === 'ar' && {'text-align':'right!important'}  || curlang === 'en' && {'text-align':'left!important'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+      <ion-content>
+        <div class = "mt-3">
+          <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+          <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

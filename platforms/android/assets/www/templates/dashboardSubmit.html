@@ -1,0 +1,166 @@
+<ion-content>
+  <header class="cib-header">
+    <div class="cib-header-content" id="headerContent">
+      <div id="leftSide">
+        <div class="left-side-content" ng-style="curlang === 'ar' && {'margin-right':'10px'} || curlang === 'en' && {'margin-left':'10px'} || curlanguageVal === 'ar' && {'margin-right':'10px'} || curlanguageVal === 'en' && {'margin-left':'10px'}">
+          <img src="img/1.JPG" alt="" srcset="">
+          <span ng-style="curlang === 'ar' && {'padding-right':'5px'}  || curlang === 'en' && {'padding-left':'10px'} || curlanguageVal === 'ar' && {'padding-right':'5px'}  || curlanguageVal === 'en' && {'padding-left':'10px'}">{{"DashBored" | translate}}</span>
+        </div>
+      </div>
+      <div class="right-side"  ng-style="curlang === 'ar' && {'margin-left':'20px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'20px'} || curlanguageVal === 'en' && {'margin-right':'20px'}">
+        <div class="right-side-content">
+          <div class="right-side-image-one">
+            <img src="img/2.JPG" alt="" srcset="">
+          </div>
+          <div class="right-side-image-two" ng-click="openPopover($event)">
+            <img src="img/3.JPG" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+ <section>
+  <div class="mt-2 header-items">
+    <div id="wallet" ng-click = "walletActive()" class="header-item header-active height-wallet width-wallet">
+      <p>{{"Wallet" | translate}}</p>
+    </div>
+    <div id="saving" ng-click = "totalSavingActive()" class="header-item ml">
+      <p class="pr">{{"TotalSaving" | translate}}</p>
+    </div>
+    <div id="balance" ng-click = "totalBalanceActive()" class="header-item">
+      <p class="pr">{{"TotalBalance" | translate}}</p>
+    </div>
+  </div>
+ </section>
+
+  <section class="home mt-1">
+    <div class="balance" >
+      <div ng-if = "walletFlag" ng-style="curlang === 'ar' && {'margin-right':'20px'} || curlang === 'en' && {'padding-left':'10px'} || curlanguageVal === 'ar' && {'margin-right':'20px'} || curlanguageVal === 'en' && {'padding-left':'15px'}" >
+        <p class="submit-title-item">{{"walletBalance" | translate}}</p>
+        <p>12,452</p>
+        <span class="eg">EGP</span>
+      </div>
+      <div ng-if = "totalSavingFlag" ng-style="curlang === 'ar' && {'margin-right':'20px'} || curlang === 'en' && {'padding-left':'15px'} || curlanguageVal === 'ar' && {'margin-right':'20px'} || curlanguageVal === 'en' && {'padding-left':'15px'}">
+        <p class="desc submit-title-item">{{"TotalSavingBalance" | translate}}</p>
+        <p>780</p>
+        <span class="eg">EGP</span>
+      </div>
+      <div ng-if = "totalBalanceFlag" ng-style="curlang === 'ar' && {'margin-right':'20px'} || curlang === 'en' && {'padding-left':'15px'} || curlanguageVal === 'ar' && {'margin-right':'20px'} || curlanguageVal === 'en' && {'padding-left':'15px'}">
+        <p class="desc submit-title-item">{{"AggregateBalance" | translate}}</p>
+        <p>13,232</p>
+        <span class="eg">EGP</span>
+      </div>
+      <div class="balance-right">
+        <div class="balance-right" ng-style="curlang === 'ar' && {'margin-left':'15px'} || curlang === 'en' && {'margin-right':'15px'} || curlanguageVal === 'ar' && {'margin-left':'15px'} || curlanguageVal === 'en' && {'margin-right':'15px'}">
+          <img src="img/4.JPG" alt="" srcset="">
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <div class="list-item">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image mrg-image">
+            <img src="img/5.JPG" alt="" srcset="">
+          </div>
+          <span class="saving">{{"savingTitle" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+      <hr class="line">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image mrg-image">
+            <img src="img/6.JPG" alt="" srcset="">
+          </div>
+          <span class="transfer">{{"transferMoney" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+      <hr class="line">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/7.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"ATMDepositWithdrawal" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+      <hr class="line">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/8.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"BillPayments" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+
+      <hr class="line">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/9.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"MerchantPurchase" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+
+      <hr class="line">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image-agent mrg-atm">
+            <img src="img/10.JPG" alt="" srcset="">
+          </div>
+          <span class="agent">{{"AgentDepositWithdrawal" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+
+      <hr class="line">
+      <div class="my-list-content">
+        <div class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/11.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"TransactionHistory" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="curlang === 'ar' && {'margin-left':'25px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguageVal === 'ar' && {'margin-left':'25px'} || curlanguageVal === 'en' && {'margin-right':'20px'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class = "popoverLang">
+
+        <span ng-style="curlang === 'ar' && {'text-align':'right!important'}  || curlang === 'en' && {'text-align':'left!important'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+      <ion-content>
+        <div class = "mt-3">
+          <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+          <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

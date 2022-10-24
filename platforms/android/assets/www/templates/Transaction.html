@@ -1,0 +1,133 @@
+<ion-content>
+  <section>
+    <header class="cib-header">
+      <div class="cib-header-content daily">
+        <div id="leftSide">
+          <div class="left-side-content" ng-style="curlang === 'ar' && {'margin-right':'10px'} || curlang === 'en' && {'margin-left':'10px'} || curlanguage === 'ar' && {'margin-right':'10px'} || curlanguage === 'en' && {'margin-left':'10px'} || getLangVal === 'ar' && {'margin-right':'10px'} || getLangVal === 'en' && {'margin-left':'10px'}">
+            <div class="mr-1">
+              <span ng-style="curlang === 'ar' && {'padding-left':'5px'}  || curlang === 'en' && {'padding-right':'10px'} || curlanguage === 'ar' && {'padding-left':'5px'}  || curlanguage === 'en' && {'padding-right':'10px'} || getLangVal === 'ar' && {'padding-left':'5px'}  || getLangVal === 'en' && {'padding-right':'10px'}" class="ion-android-close"></span>
+            </div>
+            <span>{{"Transactions" | translate}}</span>
+          </div>
+        </div>
+        <div class="right-side" ng-style="curlang === 'ar' && {'margin-left':'20px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguage === 'ar' && {'margin-left':'20px'} || curlanguage === 'en' && {'margin-right':'20px'}">
+          <div class="right-side-content daily-right">
+            <div class="right-side-image-one">
+              <img src="img/2.JPG" alt="" srcset="">
+            </div>
+            <div class="right-side-image-two" ng-click="openPopover($event)">
+              <img  src="img/3.JPG" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="wallet-balance">
+      <div class="wallet-balance-content">
+        <p class="wallet-balance-content-desc">{{"WalletBalance" | translate}} <span>EGP 6,918.00</span></p>
+      </div>
+    </section>
+  </section>
+  <section class="vaction-container mt-2">
+    <div class="color-grey">
+      <span class="ion-calendar"></span>
+      <span>06 {{"April" | translate}} 2022</span>
+    </div>
+    <div class="mt-2">
+      <p class="color-grey">{{"IncomingTransactions" | translate}}</p>
+    </div>
+  </section>
+  <hr class="transaction-line">
+  <section class="vaction-container">
+   <div class="money-transfer">
+    <span class="color-grey">{{"MoneyTransfer" | translate}}</span>
+    <div class="transfer-item">
+      <div class="right-point poistion-r right-point-ml-15 mt-1 right-point-bg-green">
+        <div class="right-point-parent">
+          <span>EGP</span>
+          <p>12</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/2.JPG" alt="">
+      </div>
+    </div>
+    <div class="mt-1">
+      <p class="transfer-desc">{{"TransactionID" | translate}}: FT190862CZJP</p>
+      <p class="transfer-desc">Narrative: Saving account top up</p>
+    </div>
+   </div>
+   <div class="color-grey mt-2 padding-l">
+    <span class="ion-calendar"></span>
+    <span>11 {{"February" | translate}} 2022</span>
+    <p class="mt-1">Outgoing Transactions</p>
+  </div>
+  <hr class="transaction-line">
+  </section>
+
+  <section class="vaction-container">
+    <div class="money-transfer">
+     <span class="color-grey">{{"MaintenanceFee" | translate}}</span>
+     <div class="transfer-item">
+       <div class="left-point poistion-r right-point-ml-15 mt-1 left-point-bg-red">
+         <div class="left-point-parent">
+           <span>EGP</span>
+           <p>10</p>
+         </div>
+       </div>
+       <div>
+         <img src="img/2.JPG" alt="">
+       </div>
+     </div>
+     <div class="mt-1">
+       <p class="transfer-desc">{{"TransactionID" | translate}}: FT18353YT7LL</p>
+       <p class="transfer-desc">Narrative: Annual for maintaining <br>Your Savings account</p>
+     </div>
+    </div>
+    <div class="color-grey mt-2 padding-l">
+     <span class="ion-calendar"></span>
+     <span>06 {{"April" | translate}} 2022</span>
+     <p class="mt-1">{{"IncomingTransactions" | translate}}</p>
+   </div>
+   <hr class="transaction-line">
+   </section>
+
+   <section class="vaction-container">
+    <div class="money-transfer">
+     <span class="color-grey">{{"DailyInterest" | translate}}</span>
+     <div class="transfer-item">
+      <div class="right-point poistion-r right-point-ml-15 mt-1 right-point-bg-green">
+        <div class="right-point-parent">
+          <span>EGP</span>
+          <p>5</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/2.JPG" alt="">
+      </div>
+    </div>
+     <div class="mt-1">
+       <p class="transfer-desc">{{"TransactionID" | translate}}: FT190862CZTl</p>
+       <p class="transfer-desc">Narrative: Daily earned amount <br>based on daily interset capitalisation</p>
+     </div>
+    </div>
+   </section>
+   <div class="mt-2 vaction-container">
+     <button ng-click = "back()" class="button button-block transfer-back">{{"Back" | translate}}</button>
+   </div>
+   <script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class = "popoverLang">
+
+        <span ng-style="curlang === 'ar' && {'text-align':'right!important'}  || curlang === 'en' && {'text-align':'left!important'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+      <ion-content>
+        <div class = "mt-3">
+          <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+          <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

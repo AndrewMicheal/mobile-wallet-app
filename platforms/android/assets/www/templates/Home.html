@@ -1,0 +1,146 @@
+<ion-content>
+ <section>
+  <header class="cib-header">
+    <div class="cib-header-content" id="headerContent">
+      <div class="left-side">
+        <div class="left-side-content" >
+          <img src="img/1.JPG" alt="" srcset="">
+          <span class="pr-1">{{"DashBored" | translate}}</span>
+        </div>
+      </div>
+      <div class="right-side pl-1">
+        <div class="right-side-content">
+          <div class="right-side-image-one" >
+            <img src="img/2.JPG" alt="" srcset="">
+          </div>
+          <div class="right-side-image-two" >
+            <div ng-click="openPopover($event)">
+              <img src="img/3.JPG" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <div class="balance" id="balance">
+      <div class="balance-left" id="balance-left">
+        <p class="desc">{{"walletBalance" | translate}}</p>
+        <p>12,452</p>
+        <span class="eg">EGP</span>
+      </div>
+      <div class="balance-right">
+        <div class="balance-right">
+          <img src="img/4.JPG" alt="" srcset="">
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <div class="list-item">
+      <div class="my-list-content" ng-click = "saving()">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content">
+          <div class="image mrg-image">
+            <img src="img/5.JPG" alt="" srcset="">
+          </div>
+          <span class="saving">{{"savingTitle" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+      <hr class="line">
+      <div class="my-list-content">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content" >
+          <div class="image mrg-image">
+            <img src="img/6.JPG" alt="" srcset="">
+          </div>
+          <span  class="transfer">{{"transferMoney" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+      <hr class="line">
+      <div class="my-list-content">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/7.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"ATMDepositWithdrawal" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+      <hr class="line">
+      <div class="my-list-content">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/8.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"BillPayments" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+
+      <hr class="line">
+      <div class="my-list-content">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/9.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"MerchantPurchase" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+
+      <hr class="line">
+      <div class="my-list-content">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content">
+          <div class="image-agent mrg-atm">
+            <img src="img/10.JPG" alt="" srcset="">
+          </div>
+          <span class="agent">{{"AgentDepositWithdrawal" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon"></span>
+        </div>
+      </div>
+
+      <hr class="line">
+      <div class="my-list-content">
+        <div ng-style="langDaily === 'ar' && {'padding-right':'1rem'}  || langDaily === 'en' && {'padding-left':'1rem'}" class="list-item-content">
+          <div class="image mrg-atm">
+            <img src="img/11.JPG" alt="" srcset="">
+          </div>
+          <span class="atm">{{"TransactionHistory" | translate}}</span>
+        </div>
+        <div class="icon">
+          <span ng-style="langDaily === 'ar' && {'padding-left':'2rem'}  || langDaily === 'en' && {'padding-right':'2rem'}" class="ion-android-arrow-dropright my-arrow-icon "></span>
+        </div>
+      </div>
+    </div>
+  </section>
+ </section>
+ <script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view class = "popoverLang">
+
+      <span ng-style="curlang === 'ar' && {'text-align':'right!important'}  || curlang === 'en' && {'text-align':'left!important'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+    <ion-content>
+      <div class = "mt-3">
+        <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+        <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+      </div>
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

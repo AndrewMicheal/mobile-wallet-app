@@ -1,0 +1,97 @@
+<ion-content>
+  <header class="cib-header">
+    <div class="cib-header-content daily" id="headerContent">
+      <div class="left-side">
+        <div class="left-side-content">
+          <div class="mr-1">
+            <span class="ion-android-close pl-1"></span>
+          </div>
+          <span>{{"DailySavingTitle" | translate}}</span>
+        </div>
+      </div>
+      <div class="right-side pl-1">
+        <div class="right-side-content daily-right">
+          <div class="right-side-image-one">
+            <img src="img/2.JPG" alt="" srcset="">
+          </div>
+          <div class="right-side-image-two">
+            <img src="img/3.JPG" ng-click="openPopover($event)" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="wallet-balance">
+    <div class="wallet-balance-content">
+      <p class="wallet-balance-content-desc" id="balance">{{"WalletBalance" | translate}} <span>EGP 6,918.00</span></p>
+    </div>
+  </section>
+  <section class="mt-2">
+    <div class="container">
+      <div class="daily-saving-content">
+        <div class="right">
+          <span>{{"DailySaving" | translate}}</span>
+        </div>
+        <div class="left">
+          <div>
+            <img src="img/12.JPG" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+      <hr class="daily-line">
+      <p class="daily-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid culpa, est voluptatem dolorum sapiente eaque unde optio debitis perspiciatis eligendi. Cum tempore molestiae qui adipisci.....</p>
+      <a href="#">{{"ReadMore" | translate}}</a>
+      <div class="tutroial-video">
+        <span class="title">{{"TutorialVideo" | translate}}</span>
+        <div class="video">
+          <div>
+            <img src="img/13.JPG" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+      <div class="mt-2">
+        <span class="bg-blue my-item">4 %</span>
+        <p class="bg-blue my-item-desc">{{"InterestRate" | translate}}</p>
+      </div>
+      <hr class="my-item-line">
+      <div class="mt-1">
+        <span class="bg-blue my-item">EGP 100,000</span>
+        <p class="bg-blue my-item-desc">{{"AccountMaximumSavingBalance" | translate}}</p>
+      </div>
+      <hr class="my-item-line">
+      <div class="mt-1">
+        <span class="bg-blue my-item">EGP 200</span>
+        <p class="bg-blue my-item-desc">{{"StampDutyFee" | translate}}</p>
+      </div>
+      <hr class="my-item-line">
+      <div class="mt-1">
+        <span class="bg-blue my-item">EGP 100</span>
+        <p class="bg-blue my-item-desc">{{"OpeningFee" | translate}}</p>
+      </div>
+      <hr class="my-item-line">
+      <div class="mt-1">
+        <span class="bg-blue my-item">EGP 50</span>
+        <p class="bg-blue my-item-desc">{{"MaintenanceFee" | translate}}</p>
+      </div>
+      <hr class="my-item-line">
+      <p class="bg-blue mt-1 my-item-desc-2">*{{"accountParagh" | translate}}</p>
+      <button ng-click = "openAccount()" class="my-btn">{{"OpenAccount" | translate}}</button>
+    </div>
+  </section>
+
+  <script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class = "popoverLang">
+
+        <span ng-style="curlang === 'ar' && {'margin-left':'auto'}  || curlang === 'en' && {'text-align':'right'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+      <ion-content>
+        <div class = "mt-3">
+          <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+          <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

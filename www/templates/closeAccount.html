@@ -1,0 +1,99 @@
+<ion-content>
+  <section ng-style="flag && {'background-color': '#b2b2b2'} || {'background-color': '#fff'}" class="close-account-parent">
+    <header class="cib-header">
+      <div class="cib-header-content daily">
+        <div id="leftSide">
+          <div class="left-side-content" ng-style="curlang === 'ar' && {'margin-right':'10px'} || curlang === 'en' && {'margin-left':'10px'} || curlanguage === 'ar' && {'margin-right':'10px'} || curlanguage === 'en' && {'margin-left':'10px'} || getLangVal === 'ar' && {'margin-right':'10px'} || getLangVal === 'en' && {'margin-left':'10px'}">
+            <div class="mr-1">
+              <span ng-style="curlang === 'ar' && {'padding-left':'5px'}  || curlang === 'en' && {'padding-right':'10px'} || curlanguage === 'ar' && {'padding-left':'5px'}  || curlanguage === 'en' && {'padding-right':'10px'} || getLangVal === 'ar' && {'padding-left':'5px'}  || getLangVal === 'en' && {'padding-right':'10px'}" class="ion-android-close"></span>
+            </div>
+            <span>{{"CloseAccount" | translate}}</span>
+          </div>
+        </div>
+        <div class="right-side" ng-style="curlang === 'ar' && {'margin-left':'20px'} || curlang === 'en' && {'margin-right':'20px'} || curlanguage === 'ar' && {'margin-left':'20px'} || curlanguage === 'en' && {'margin-right':'20px'}">
+          <div class="right-side-content daily-right">
+            <div class="right-side-image-one">
+              <img src="img/2.JPG" alt="" srcset="">
+            </div>
+            <div class="right-side-image-two" ng-click="openPopover($event)">
+              <img src="img/3.JPG" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="wallet-balance">
+      <div class="wallet-balance-content">
+        <p class="wallet-balance-content-desc">{{"WalletBalance" | translate}} <span>EGP 6,918.00</span></p>
+      </div>
+    </section>
+    <section class="mt-2 vaction-container">
+      <p class="color-grey">{{"NameOfAccount" | translate}}</p>
+      <div class="mt-2 conditon-item-content-2">
+        <span>Vacation</span>
+      </div>
+      <div class="mt-2">
+        <p class="color-grey fs18">{{"SavingBalance" | translate}}</p>
+        <span class="close-account-title-egp">EGP 20,000</span>
+      </div>
+      <div class="mt-3 poistion-r">
+        <span class="color-grey destination">Destination</span>
+        <div class="close-wallet-item mt-1" ng-style="curlang === 'ar' && {{walletArDir}}  || curlang === 'en' && {{walletEnDir}} || curlanguage === 'ar' && {{walletArDir}}  || curlanguage === 'en' && {{walletEnDir}} || getLangVal === 'ar' && {{walletArDir}} || getLangVal === 'en' && {{walletEnDir}}">
+          <img src="img/5.JPG" alt="" srcset="">
+          <span class="ml-2">{{"WalletAccount" | translate}}</span>
+        </div>
+
+      </div>
+      <div class="close-wallet-content">
+        <p class="color-grey close-wallet-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          perspiciatis tenetur ipsa blanditiis distinctio. Veritatis minus officia id in? Numquam atque necessitatibus
+          saepe ducimus, cum quas officia quisquam amet distinctio?</p>
+      </div>
+      <div class="cancellation-content">
+        <p class="color-grey cancel-reason">{{"CancellationReason" | translate}}</p>
+      </div>
+      <div class="mt-1">
+        <select ng-change="getData(closeAccount)" ng-model="closeAccount" class="selectItems">
+          <option value="" disabled selected>{{"SelectAReason" | translate}}</option>
+          <option value="Dissatisfied with service">{{"DissatisfiedWithService" | translate}}</option>
+          <option value="Found a better investment opportunity">{{"FoundABetterInvestmentOpportunity" | translate}}</option>
+          <option value="Need the funds">{{"Needthefunds" | translate}}</option>
+          <option value="Other reason">{{"OtherReason" | translate}}</option>
+        </select>
+      </div>
+
+      <div class="close-buttons">
+        <button class="back-btn close-border" ng-click="back()">{{"Back" | translate}}</button>
+        <button ng-click="closeNext()"
+          ng-style="dsbl == true && {'background-color':'#f6f6f6','color' : '#000'}  || dsbl == false && {'background-color':'#0026D9'}"
+          class="next-btn ml-btn" ng-disabled=dsbl class="bg-btn-blue">{{"Next" | translate}}</button>
+      </div>
+    </section>
+
+    <div class="confirm-delete" ng-if="flag == true">
+      <span class="close-confirm">{{"Confirmation" | translate}}</span>
+      <p class="mt-1">{{"Areyousureyouwanttodeleteyour" | translate}} <br>{{"account" | translate}} {{"ques" | translate}}</p>
+      <div class="close-buttons">
+        <button ng-click = "ok()" class="button-block button close-ok">{{"ok" | translate}}</button>
+      </div>
+      <div>
+        <button ng-click="closeCancel()" class="button-block button close-cancel">{{"cancel" | translate}}</button>
+      </div>
+    </div>
+  </section>
+  <script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class = "popoverLang">
+
+        <span ng-style="curlang === 'ar' && {'text-align':'right!important'}  || curlang === 'en' && {'text-align':'left!important'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+      <ion-content>
+        <div class = "mt-3">
+          <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+          <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+  <ion-infinite-scroll class="scroll-close" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,122 @@
+<ion-content>
+  <header class="cib-header">
+    <div class="cib-header-content daily">
+      <div id="leftSide">
+        <div class="left-side-content" ng-style="curlang === 'ar' && {'margin-right':'5px'} || curlang === 'en' && {'margin-left':'10px'} || curlanguageVal === 'ar' && {'margin-right':'5px'} || curlanguageVal === 'en' && {'margin-left':'10px'}">
+          <div>
+            <span class="ion-android-close"></span>
+          </div>
+          <span ng-style="curlang === 'ar' && {'margin-right':'10px'} || curlang === 'en' && {'margin-left':'10px'} || curlanguageVal === 'ar' && {'margin-right':'10px'} || curlanguageVal === 'en' && {'margin-left':'10px'}">{{"CreateDailySavings" | translate}}</span>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="right-side-content daily-right">
+          <div class="right-side-image-one">
+            <img src="img/2.JPG" alt="" srcset="">
+          </div>
+          <div class="right-side-image-two" ng-click="openPopover($event)">
+            <img src="img/3.JPG" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="wallet-balance">
+    <div class="wallet-balance-content">
+      <p class="wallet-balance-content-desc">{{"WalletBalance" | translate}} <span>EGP 6,918.00</span></p>
+    </div>
+  </section>
+  <section class="mt-2">
+    <p class="text-center pin-title">{{"EnterPINcode" | translate}}</p>
+    <div class="mt-2">
+      <div class="locks">
+        <div class="lock">
+          <span class="ion-android-lock ion-lock-item"></span>
+        </div>
+        <div class="lock">
+          <span class="ion-android-lock ion-lock-item"></span>
+        </div>
+        <div class="lock">
+          <span class="ion-android-lock ion-lock-item"></span>
+        </div>
+        <div class="lock">
+          <span class="ion-android-lock ion-lock-item"></span>
+        </div>
+        <div class="lock">
+          <span class="ion-android-lock ion-lock-item"></span>
+        </div>
+        <div class="lock">
+          <span class="ion-android-lock ion-lock-item"></span>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div class="numbers">
+          <div class="number">
+            <span>1</span>
+          </div>
+          <div class="number">
+            <span>2</span>
+          </div>
+          <div class="number">
+            <span>3</span>
+          </div>
+        </div>
+        <div class="numbers mt-1">
+          <div class="number">
+            <span>4</span>
+          </div>
+          <div class="number">
+            <span>5</span>
+          </div>
+          <div class="number">
+            <span>6</span>
+          </div>
+        </div>
+        <div class="numbers mt-1">
+          <div class="number">
+            <span>7</span>
+          </div>
+          <div class="number active">
+            <span>8</span>
+          </div>
+          <div class="number">
+            <span>9</span>
+          </div>
+        </div>
+
+        <!-- ng-style="curlang === 'ar' && {'justify-content':'flex-start'} || curlang === 'en' && {justify-content':'flex-end'} || curlanguageVal === 'ar' && {justify-content':'flex-start'}  || curlanguageVal === 'en' && {justify-content':'flex-end'}" -->
+        <div class="last-numbers  mt-1" id="lastNumber" ng-style="curlang === 'ar' && {{buttonsAr}} || curlang === 'en' && {{buttonsEn}} || curlanguageVal === 'ar' && {{buttonsAr}} || curlanguageVal === 'en' && {{buttonsEn}}" >
+          <div class="number">
+            <span>0</span>
+          </div>
+          <div class="number closePinIcon">
+            <span class="ion-android-cancel ion-icon"></span>
+          </div>
+        </div>
+        <div class="container-item">
+          <div class="bttons">
+            <button id="backBtn" ng-click = "back()" class="back-btn">{{"back" | translate}}</button>
+            <button ng-click = "confirm()" class="next-btn-plan">{{"agree" | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class = "popoverLang">
+
+        <span ng-style="curlang === 'ar' && {'text-align':'right!important'}  || curlang === 'en' && {'text-align':'left!important'}" class = "fontTitle bg-transparent d-block">{{"changeLanguage" | translate}}</span>
+
+      <ion-content>
+        <div class = "mt-3">
+          <p ng-click = "changeLanguage('en')">{{"English" | translate}}</p>
+          <p ng-click = "changeLanguage('ar')">{{"arabic" | translate}}</p>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+
+  <ion-infinite-scroll class="scroll-converstion" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

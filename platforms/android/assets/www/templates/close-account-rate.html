@@ -1,0 +1,26 @@
+<section class="rate">
+  <div class="rate-content">
+    <span class="rate-title">{{"RateYourExperience" | translate}}</span>
+    <div class="rate-star mt-1">
+      <span class="ion-star bg-blue star-bold marginRate "></span>
+      <span class="ion-star bg-blue star-bold marginRate "></span>
+      <span class="ion-star bg-blue star-bold marginRate "></span>
+      <span class="ion-star bg-blue star-bold marginRate "></span>
+      <span class="ion-ios-star-outline star-bold"></span>
+    </div>
+
+    <div class="comment mt-1 ">
+      <span>{{"Comment" | translate}}</span>
+      <textarea ng-change = "getData(comment)" ng-model = "comment" class="textArea" name="" id="" cols="30" rows="5"></textarea>
+      <span class="limit-title">{{commentLength}} / 2000</span>
+      <p class="red" ng-if = "commentLength > 2000">{{"theValueIsToLong" | translate}}</p>
+    </div>
+    <div class="mt-1">
+      <button class="button button-block bg-btn-blue" ng-disabled = disableBtn ng-click = "submit()">{{"Submit" | translate}}</button>
+    </div>
+    <div class="mt-1">
+      <button class="button button-block bg-skip" ng-click = "skip()">{{"Skip" | translate}}</button>
+    </div>
+  </div>
+</section>
+
