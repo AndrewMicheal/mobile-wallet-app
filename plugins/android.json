@@ -13,6 +13,9 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.cib834564"
         },
+        "cordova-plugin-pincheck": {
+            "PACKAGE_NAME": "com.ionicframework.cib834564"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.cib834564"
         },
@@ -23,9 +26,6 @@
             "PACKAGE_NAME": "com.ionicframework.cib834564"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.cib834564"
-        },
-        "cordova-plugin-prevent-screenshot": {
             "PACKAGE_NAME": "com.ionicframework.cib834564"
         }
     },

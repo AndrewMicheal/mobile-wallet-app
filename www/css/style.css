@@ -162,7 +162,8 @@ hr {
 }
 .mrg-image {
   margin-right: 15px !important;
-  padding-left: 15px!important;
+  margin-left: 5px!important;
+
 }
 .saving {
   color: #161616;

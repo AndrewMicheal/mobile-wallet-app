@@ -56,7 +56,7 @@ DashboardSubmitController.controller('DashboardSubmitController',function($scope
 
   let wallet = document.getElementById("wallet");
   let saving = document.getElementById("saving");
-  let balance = document.getElementById("balance");
+  let balance = document.getElementById("TotalBalance");
 
   let body = document.getElementsByTagName("body")[0];
   let leftSide = document.getElementById("leftSide");

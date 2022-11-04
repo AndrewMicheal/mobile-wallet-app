@@ -9,6 +9,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-pincheck.PinCheck",
+        "file": "plugins/cordova-plugin-pincheck/www/PinCheck.js",
+        "pluginId": "cordova-plugin-pincheck",
+        "clobbers": [
+            "cordova.plugins.PinCheck"
+        ]
+    },
+    {
         "id": "cordova-plugin-splashscreen.SplashScreen",
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "pluginId": "cordova-plugin-splashscreen",
@@ -32,14 +40,6 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
-    },
-    {
-        "id": "cordova-plugin-prevent-screenshot.screenshot",
-        "file": "plugins/cordova-plugin-prevent-screenshot/www/screenshot.js",
-        "pluginId": "cordova-plugin-prevent-screenshot",
-        "clobbers": [
-            "window.plugins.preventscreenshot"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -47,11 +47,11 @@ module.exports.metadata =
 {
     "cordova-plugin-console": "1.1.0",
     "cordova-plugin-device": "1.1.4",
+    "cordova-plugin-pincheck": "0.0.6",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-prevent-screenshot": "1.0.0"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

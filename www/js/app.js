@@ -7,6 +7,14 @@ let app = angular.module('starter', ['ionic' , 'pascalprecht.translate'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+    if(window.cordova && window.cordova.plugins.PinCheck){
+      window.cordova.plugins.PinCheck.isPinSetup(function(success){
+       console.log("pin is setup.");
+      }, function(fail){
+       alert("Your device is not protected with a password. Please setup the password" + '\n الهاتف غير مأمن بكلمة مرور. يرجى تفعيل كلمة المرور للجهاز');
+       navigator.app.exitApp();
+      });
+    }
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -133,20 +141,4 @@ app.config(function($stateProvider, $urlRouterProvider){
 })
 
 
-document.addEventListener("deviceready", onDeviceReady, false);
-// Enable
-function onDeviceReady() {
-  window.plugins.preventscreenshot.enable(successCallback, errorCallback);
-}
-// Disable
-function onDeviceReady() {
-  window.plugins.preventscreenshot.disable(successCallback, errorCallback);
-}
 
-function successCallback(result) {
-  console.log(result); // true - enabled, false - disabled
-}
-
-function errorCallback(error) {
-  console.log(error);
-}
